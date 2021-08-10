@@ -1,0 +1,36 @@
+title Uusi muistiinpano
+
+selain->palvelin: HTTP POST new_note
+
+note over palvelin:
+suorittaa new_note-koodia palvelimella
+siten luo uuden notesin aikaleimalla
+end note
+
+palvelin-->selain: redirect /notes
+
+note over selain:
+palvelimelta redirect kehottaa selainta
+tekemään uuden HTTP GET -pyynnön osoitteeseen notes
+eli aikaisempi tapahtumasarja toistuu
+end note
+
+selain->palvelin: HTTP GET https://studies.cs.helsinki.fi/exampleapp/notes
+palvelin-->selain: HTML-koodi
+selain->palvelin: HTTP GET https://studies.cs.helsinki.fi/exampleapp/main.css
+palvelin-->selain: main.css
+selain->palvelin: HTTP GET https://studies.cs.helsinki.fi/exampleapp/main.js
+palvelin-->selain: main.js
+
+note over selain:
+selain alkaa suorittaa js-koodia
+joka pyytää JSON-datan palvelimelta
+end note
+
+selain->palvelin: HTTP GET https://studies.cs.helsinki.fi/exampleapp/data.json
+palvelin-->selain: [{ content: "HTML on helppoa", date: "2019-01-01" }, ...]
+
+note over selain:
+selain suorittaa tapahtumankäsittelijän
+joka renderöi muistiinpanot näytölle
+end note
