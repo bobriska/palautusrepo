@@ -12,7 +12,7 @@ palvelin-->selain: redirect /notes
 note over selain:
 palvelimelta redirect kehottaa selainta
 tekemään uuden HTTP GET -pyynnön osoitteeseen notes
-eli aikaisempi tapahtumasarja toistuu
+eli aikaisempi tapahtumasarja toistuu (seuraa kopio esimerkistä)
 end note
 
 selain->palvelin: HTTP GET https://studies.cs.helsinki.fi/exampleapp/notes
