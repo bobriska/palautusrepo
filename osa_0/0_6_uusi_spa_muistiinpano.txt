@@ -1,0 +1,14 @@
+title SPA_uusi
+
+note over selain:
+Luodaan muistiinpano, lisätään muistiinpanojen listalle 
+ja renderöidään muistiinpanot näytölle
+end note
+
+selain->palvelin: https://studies.cs.helsinki.fi/exampleapp/new_note_spa
+
+note over palvelin:
+palvelin saa uuden muistiinpanon JSON-muodossa
+end note
+
+palvelin-->selain: 201 Created
