@@ -9,9 +9,10 @@ const Button = (props) => {
 }
 
 const Display = (props) => {
-  console.log(props.votes)
+  //only show if there are votes, that is all is not 0
   if (props.votes.reduce((a, b) => a + b, 0) > 0) {
-    const most_voted = props.votes.indexOf(Math.max.apply(Math, props.votes))
+    //this gets the index of largest value in array
+    let most_voted = props.votes.indexOf(Math.max.apply(Math, props.votes))
     return (
       <div>
         <h1> Anecdote with most votes </h1>
